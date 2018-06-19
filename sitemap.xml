@@ -3,77 +3,77 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/localhost:1313/post/test_page2/</loc>
+    <loc>/post/test_page2/</loc>
     <lastmod>2017-10-15T03:29:08-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/localhost:1313/test_page2/</loc>
+    <loc>/test_page2/</loc>
     <lastmod>2017-10-15T03:29:08-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/localhost:1313/post/test_page/</loc>
+    <loc>/post/test_page/</loc>
     <lastmod>2017-10-15T03:29:08-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/localhost:1313/test_page/</loc>
+    <loc>/test_page/</loc>
   </url>
   
   <url>
-    <loc>/localhost:1313/2015-07-23-r-rmarkdown/</loc>
+    <loc>/2015-07-23-r-rmarkdown/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/localhost:1313/post/2015-07-23-r-rmarkdown/</loc>
+    <loc>/post/2015-07-23-r-rmarkdown/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/localhost:1313/categories/</loc>
+    <loc>/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/localhost:1313/tags/plot/</loc>
+    <loc>/tags/plot/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/localhost:1313/post/</loc>
+    <loc>/post/</loc>
     <lastmod>2017-10-15T03:29:08-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/localhost:1313/categories/r/</loc>
+    <loc>/categories/r/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/localhost:1313/tags/r-markdown/</loc>
+    <loc>/tags/r-markdown/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/localhost:1313/tags/regression/</loc>
+    <loc>/tags/regression/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/localhost:1313/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/localhost:1313/</loc>
+    <loc>/</loc>
     <lastmod>2017-10-15T03:29:08-07:00</lastmod>
     <priority>0</priority>
   </url>
