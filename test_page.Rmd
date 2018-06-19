@@ -1,0 +1,18 @@
+---
+weight: 2
+title: "Transforming between trauma questionnaires"
+nav_heading: "CTQ to ACES"
+case_short_title: "CTQ to ACES Shiny App Explorer"
+case_title: "CTQ to ACES Shiny App Explorer"
+case_subtitle: "R: Shiny App"
+case_description: "How well do scores on the Childhood Trauma Questionnaire translate to the Adverse Childhood Experience Questionnaire?"
+case_content: "The TEDxADMU website was a project for the Ateneo Junior Marketing Association. It's a project where I helped them reach a 66.8% conversion rate from scratch."
+button_links:
+    - link: "http://tedxadmu.ph"
+      img: "eyeball.svg"
+      text: "Launch the Shiny App"
+date: 2017-10-15:29:08-07:00
+draft: false
+---
+
+# Test page
