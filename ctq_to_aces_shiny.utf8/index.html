@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Translating between trauma questionnaires</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#574CDD">
+<meta name="description" content="">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:image" content="">
+<meta name="twitter:image" content="">
+<link rel="icon" href="/img/favicon.png" type="image/x-icon">
+<link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/css/final.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+
+    </head>
+    <body>
+        <nav class="main-navigation stuckMenu">
+    <a href="/">
+        <img class="logo" src="/img/logo.png" alt="My Portfolio">
+    </a>
+    <h5>CTQ to ACES</h5>
+    <div class="sub-navigation">
+        <a href="/" class="main-navigation-link" data-scroll-goto="2">Blog</a>
+    </div>
+</nav>
+        <section>
+    <div class="main-case-study">
+        <h1 class="title" style="text-align: center;">Translating between trauma questionnaires</h1>
+        <h2 class="subtitle" style="text-align: center;">R: Shiny App</h2>
+        <img src="img/shiny_app_preview.png" alt="">
+        <p class="summary"></p>
+        <h1 style="color: black; font-family: merriweather; font-size: 26px; line-height: 1.7em; margin-top: 20px;"></h1>
+        <div class="case-links">
+            
+            
+            <div class="link-div">
+                <a href="https://theresacheng.shinyapps.io/ctq_to_aces_shiny/" target="blank" class="case-detail-link">
+                    
+                    <img src="/svg/">
+                    
+                    Launch the Shiny App
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</section>
+        <section class="testimonial" style="background:#fdfcfc;">
+    <div class="results-content">
+        <h1>""</h1>
+        <hr>
+        <img src="img/" alt="">
+        <h2></h2>
+        <h3></h3>
+    </div>
+</section>
+
+        <section>
+            <div class="content-case-study">
+                
+
+<p>Two of the most common surveys used to evaluate childhood adversity are the Childhood Trauma Questionaire (CTQ) and Adverse Childhood Experience (ACE) questionnaires. For each of five maltreatment subscales, the CTQ has multiple items corresponding to a single ACE item. We use different methods to predict ACE scores from the CTQ scores and evaluate the quality of these predictions.</p>
+
+<p>While primarily for researchers that study childhood maltreatment, the interactive visualization of statistical concepts and receiver operating characteristic curves, might also be of interest to students in an introductory statistics course.</p>
+
+<h2 id="data">Data</h2>
+
+<p>The data are from a sample of 462 young adults* who took both scales. The dataset includes their scores on each of the CTQ and ACE items, as well as participant age, and this information was provided by Dr. Martin Teicher (dataset characteristics are available in Teicher &amp; Parriger, 2015).</p>
+
+<h2 id="shiny-app-components">Shiny app components</h2>
+
+<h2 id="subscale-options">Subscale Options</h2>
+
+<p>The subscales on both the CTQ and ACES address emotional abuse, physical abuse, sexual abuse, emotional neglect, and physical neglect.</p>
+
+<h3 id="prediction-options">Prediction options</h3>
+
+<h4 id="item-based-thresholding-aka-the-participants-are-logical-responders-approach">Item-based thresholding, aka the &ldquo;participants are logical responders&rdquo; approach:</h4>
+
+<p>On the ACES, each subscale is assessed by a compound question. For example, the question about physical neglect is phrased as, &ldquo;Did you <strong>often</strong> feel that you didn’t have enough to eat, had to wear dirty clothes, and had no one to protect you? -or- Your parents were too drunk or high to take care of you or take you to the doctor if you needed it?&rdquo; (emphasis mine).</p>
+
+<p>On the other hand, the CTQ asks about how often a specific exposure occurred, with the following responses options: (1) Never, (2) Rarely, (3) Sometimes, (4) Often, and (5) Very Often. For the same physical neglect subscale, the CTQ asks five questions.
+  1. I didn&rsquo;t have enough to eat.
+  2. I knew that there was someone to take care of me and protect me. [reverse scored]
+  3. I had to wear dirty clothes.
+  4. My parents were too drunk or high to take care of the family.
+  5. There was someone to take me to the doctor if I needed it.</p>
+
+<p>The questions don&rsquo;t align perfectly, and some of the CTQ items are reverse scored. But if participants were fairly logical and consistent responders, this would be a pretty good way to translate CTQ subscales into ACE scores.</p>
+
+<h4 id="subscale-based-thresholding">Subscale-based thresholding</h4>
+
+<p>Another option is to add up all of the CTQ items for a particular subscale&ndash; since there are always 5 questions, this is out of 25&ndash; and then see whether there&rsquo;s a &ldquo;tipping point&rdquo; on the CTQ that translates into ACE endorsement. Here, we&rsquo;d predict ACE endorsement if participants respond at or above a summed value on the corresponding CTQ subscale, and you can explore how different thresholds impact effectiveness.</p>
+
+<p>This is a topic for a different post, but the OptimalCutpoints package in R can help you identify the best threshold based on different criteria&ndash; e.g., maximizing sensitivity and specificity.</p>
+
+<h4 id="logistic-regression">Logistic regression</h4>
+
+<p>It also seems reasonable that each of the items per CTQ subscale might be weighed differently in terms of predictive value. For example, maybe the CTQ item &ldquo;My parents were too drunk or high to take care of the family&rdquo; is a stronger predictor of ACE endorsement than the other items, and taking this into account might improve our prediction.</p>
+
+<p>We fit a logistic regression model in which ACE endorsement is predicted by each of its five CTQ subscale items. Then, we use those weights to estimate the odds (transformed to probability) of each individual endorsing the ACE item corresponding to that subscale. In the app, you can explore how well the prediciton performs for different probability thresholds.</p>
+
+<h3 id="contents">Contents</h3>
+
+<ol>
+<li><p><strong>Graph of sensitivity, specificity, and positive/negative predictive values:</strong> Learn more about these ways of describing test accuracy <a href="https://onlinecourses.science.psu.edu/stat507/02/intro/">here</a>! Note that there are trade-offs in sensitivity/specificity and PPV/NPV across every thresholding method and value.</p></li>
+
+<li><p><strong>Table of participants per condition:</strong> Shows the raw number of participants that would demonstrate true positives, false positives, true negatives, and false negatives for each prediction method and threshold. The total number of participants changes slightly because of missing ACE responses (we used mean imputation within subscale to handle missing data in the CTQ).</p></li>
+
+<li><p><strong>Receiver operating characteristics:</strong> Shows the trade-offs between identifying true and false positives <em>for the subscale thresholding method only</em>. Learn more about this type of graph <a href="http://gim.unmc.edu/dxtests/roc3.htm">here</a>.</p></li>
+</ol>
+
+<h2 id="happy-exploring">Happy exploring!</h2>
+
+            </div>
+        </section>
+
+        
+
+        
+        <footer>
+    <div class="icons">
+        
+        <a href="mailto:tcheng@uoregon.edu">
+            <svg width="16px" height="14px" viewBox="0 0 16 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+                
+                <title>ui-16px-1_email-84</title>
+                <desc>Created with Sketch.</desc>
+                <defs></defs>
+                <g id="Portfolio" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g transform="translate(-94.000000, -336.000000)" id="Group" fill="#505050">
+                        <g transform="translate(94.000000, 335.000000)">
+                            <g id="ui-16px-1_email-84" transform="translate(0.000000, 1.000000)">
+                                <path d="M15,0 L1,0 C0.448,0 0,0.447 0,1 L0,13 C0,13.553 0.448,14 1,14 L15,14 C15.552,14 16,13.553 16,13 L16,1 C16,0.447 15.552,0 15,0 Z M14,12 L2,12 L2,5.723 L7.504,8.868 C7.812,9.044 8.189,9.044 8.496,8.868 L14,5.723 L14,12 Z M14,3.42 L8,6.849 L2,3.42 L2,2 L14,2 L14,3.42 Z" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </a>
+        
+        
+        
+        <a href="https://twitter.com/lexiscollado" target="blank">
+            <svg width="16px" height="14px" viewBox="0 0 16 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+                
+                <title>social-16px_logo-twitter</title>
+                <desc>Created with Sketch.</desc>
+                <defs></defs>
+                <g id="Portfolio" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g transform="translate(-169.000000, -336.000000)" id="Group" fill="#505050">
+                        <g transform="translate(94.000000, 335.000000)">
+                            <g id="social-16px_logo-twitter" transform="translate(75.000000, 1.000000)">
+                                <path d="M16,2 C15.4,2.3 14.8,2.4 14.1,2.5 C14.8,2.1 15.3,1.5 15.5,0.7 C14.9,1.1 14.2,1.3 13.4,1.5 C12.8,0.9 11.9,0.5 11,0.5 C9.3,0.5 7.8,2 7.8,3.8 C7.8,4.1 7.8,4.3 7.9,4.5 C5.2,4.4 2.7,3.1 1.1,1.1 C0.8,1.6 0.7,2.1 0.7,2.8 C0.7,3.9 1.3,4.9 2.2,5.5 C1.7,5.5 1.2,5.3 0.7,5.1 L0.7,5.1 C0.7,6.7 1.8,8 3.3,8.3 C3,8.4 2.7,8.4 2.4,8.4 C2.2,8.4 2,8.4 1.8,8.3 C2.2,9.6 3.4,10.6 4.9,10.6 C3.8,11.5 2.4,12 0.8,12 L0,12 C1.5,12.9 3.2,13.5 5,13.5 C11,13.5 14.3,8.5 14.3,4.2 L14.3,3.8 C15,3.3 15.6,2.7 16,2 Z" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </a>
+        
+        
+        
+        
+    </div>
+
+    <a href="#" style="color: #574cdd; text-decoration: underline;" data-scroll-goto="0">Back to top</a>
+</footer>
+        
+
+        
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-XXXXXXXX-Y', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<script src="/js/jquery-1.js"></script>
+<script src="/js/stickUp.js"></script>
+<script src="/js/scrollIt.js" type="text/javascript"></script>
+<script type="text/javascript">
+    jQuery(function($) {
+        $(document).ready( function() {
+            $('.main-navigation').stickUp({
+
+            });
+        });
+    });
+    $(function(){
+        $.scrollIt({
+            topOffset: -70,         
+            easing: 'ease-in-out'
+        });
+    });
+</script>
+    </body>
+</html>

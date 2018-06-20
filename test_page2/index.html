@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>TEST2</title>
+<title>Visualizing the translation between trauma questionnaires</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#574CDD">
 <meta name="description" content="">
@@ -24,26 +24,25 @@
     <a href="/">
         <img class="logo" src="/img/logo.png" alt="My Portfolio">
     </a>
-    <h5>CTQ to ACES</h5>
+    <h5>CTQ to ACES: Visuals</h5>
     <div class="sub-navigation">
         <a href="/" class="main-navigation-link" data-scroll-goto="2">Blog</a>
     </div>
 </nav>
         <section>
     <div class="main-case-study">
-        <h1 class="title" style="text-align: center;">CTQ to ACES Shiny App Explorer</h1>
-        <h2 class="subtitle" style="text-align: center;">R: Shiny App</h2>
+        <h1 class="title" style="text-align: center;">Visualizing the translation between trauma questionnaires</h1>
+        <h2 class="subtitle" style="text-align: center;">Anatomy of a Data Visualization</h2>
         <img src="img/" alt="">
         <p class="summary"></p>
-        </div>
         <h1 style="color: black; font-family: merriweather; font-size: 26px; line-height: 1.7em; margin-top: 20px;"></h1>
         <div class="case-links">
             
             
             <div class="link-div">
-                <a href="http://tedxadmu.ph" target="blank" class="case-detail-link">
+                <a href="https://theresacheng.shinyapps.io/ctq_to_aces_shiny/" target="blank" class="case-detail-link">
                     
-                    <img src="/svg/eyeball.svg">
+                    <img src="/svg/">
                     
                     Launch the Shiny App
                 </a>
@@ -52,20 +51,37 @@
         </div>
     </div>
 </section>
-        <section class="testimonial" style="background:#fdfcfc;">
-    <div class="results-content">
-        <h1>""</h1>
-        <hr>
-        <img src="img/" alt="">
-        <h2></h2>
-        <h3></h3>
-    </div>
-</section>
+        
 
         <section>
             <div class="content-case-study">
-                <div id="test-page" class="section level1">
-<h1>Test page</h1>
+                <p>These four visualizations helped me make sense of the data. Not all of them made it to the final Shiny App. Not sure what I’m talking about? Check out my post here [bananas link!]</p>
+<div id="describing-the-childhood-trauma-questionnaire-ctq-subscales-using-heatmaps" class="section level1">
+<h1>1. Describing the Childhood Trauma Questionnaire (CTQ) subscales using heatmaps</h1>
+<p>[bananas add before/after pics]</p>
+<p>Before going about trying to convert between the CTQ and ACE survey, I wanted to make sure that items on the CTQ “hung together” within subscales. A heatmap organized by subscale that shows correlations between each CTQ item gives me a general sense of coherence within and between subscales. A simpler heatmap showing correlations between subscales (not items) further clarifies the strength of co-exposures to trauama in the sample.</p>
+<p>The process of improving this graph included simplifying the item labels for legibility, clarifying labels and titles, and changing the color scale to better display the range of values. It also included completely accidentally making the simpler heatmap when trying to render the more complex one, and then going, “Hey, that seems useful, too!”</p>
+<p>Still needs a figure caption exaplaining the subscale abbreviations, but hey – this one didn’t make the final app cut.</p>
+</div>
+<div id="table-of-participants-with-truefalse-positivesnegatives" class="section level1">
+<h1>2. Table of participants with true/false positives/negatives</h1>
+<p>This table shows how changes in threshold impact the number of participants sorted by predicted ACE and actual ACE scores. I re-formatted the table in a 2 by 2 format that is commonly used in biomedical statistics, where the outcome (in this case, actual ACE endorsement) is indicated by True and False columns, while the drug or exposure (in this case, predicted ACE endorsement) is reflected by True and False rows.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Bar graph of sensitivity, specificity, positive predictive value, and negative predictive value.</li>
+</ol>
+<p>This bar graph complements the table by showing changes in sensitivity, specificity, negative predictive value, and positive predictive value that correspond with the different number of participants in the true/false positive/negative categories.</p>
+<p>Bar graphs are fairly straightforward, and this one doesn’t have any bells and whistles (i.e. error bars!) to contend with, since it’s about presenting actual values and not estimtes, so the goal was to make ’er sleek as a minx. I used a minimal aesthetic for legibility, including both gray major tick lines and actual printed percentages to help viewers note the values. I also used a color palette that emphasizes the pairing of sensitivity/specificity (in yellows) and PPV/NPV (in blues).</p>
+</div>
+<div id="receiver-operating-characteristic-roc-curves-for-subscale-based-thresholding" class="section level1">
+<h1>4. Receiver operating characteristic (ROC) curves for subscale-based thresholding</h1>
+<p>[bananas add before/after pics]</p>
+<p>This graph demonstrates trade-offs in identifying true positives (sensitivity, on the y-axis) and false positives (1-specificity, on the x axis) as the threshold for converting the cumulative CTQ score into an ACE endorsement changes.</p>
+<p>A transformation that is both sensitive and specific will present at close to a 90 degree angle along the top and left side of the graph, increasing the area under the curve. A test that is not useful diagnostically will look much more like a 45 degree angle, minimizing the area under the curve. Viewers can visually inspect the labels on the curve to select a threshold that appears to meet preferred specificity and sensitivity values.</p>
+<p>To make this graph, I used the plotROC package and added features for aesthetics (minimal background) and clarity (new axis labels). I also added vertical and horizontal lines to help visualize the true and false positive rates for the chosen threshold.</p>
+</div>
+<div id="running-the-code" class="section level1">
+<h1>Running the code</h1>
+<p>All of the relevant code can be found on GitHub [bananas]. Specifically, the heatmaps are available in “ctq_heatmaps.Rmd”, while the other relevant code for graphs 2-4 can be found in the Shiny format (app.R, helper.R) However, the graphs are not fully reproducible because I do not have permission to publically share the data. With permission from the original authors, I may be able to share the data so that y’all can run this jam solo.</p>
 </div>
 
             </div>

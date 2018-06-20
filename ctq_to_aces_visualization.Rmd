@@ -29,7 +29,9 @@ Still needs a figure caption exaplaining the subscale abbreviations, but hey -- 
 
 This table shows how changes in threshold impact the number of participants sorted by predicted ACE and actual ACE scores. I re-formatted the table in a 2 by 2 format that is commonly used in biomedical statistics, where the outcome (in this case, actual ACE endorsement) is indicated by True and False columns, while the drug or exposure (in this case, predicted ACE endorsement) is reflected by True and False rows.
 
-3. Bar graph of sensitivity, specificity, positive predictive value, and negative predictive value. 
+# 3. Bar graph of sensitivity, specificity, positive predictive value, and negative predictive value. 
+
+![](graph_3_before_after.jpg)
 
 This bar graph complements the table by showing changes in sensitivity, specificity, negative predictive value, and positive predictive value that correspond with the different number of participants in the true/false positive/negative categories.
 

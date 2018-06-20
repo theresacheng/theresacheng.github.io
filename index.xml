@@ -21,15 +21,6 @@
     </item>
     
     <item>
-      <title>TEST2</title>
-      <link>/test_page2/</link>
-      <pubDate>Sun, 15 Oct 2017 03:29:08 -0700</pubDate>
-      
-      <guid>/test_page2/</guid>
-      <description>Test page  </description>
-    </item>
-    
-    <item>
       <title>Transforming between trauma questionnaires</title>
       <link>/post/test_page/</link>
       <pubDate>Sun, 15 Oct 2017 03:29:08 -0700</pubDate>
@@ -39,23 +30,24 @@
     </item>
     
     <item>
-      <title>Transforming between trauma questionnaires</title>
-      <link>/test_page/</link>
+      <title>Translating between trauma questionnaires</title>
+      <link>/ctq_to_aces_shiny/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/test_page/</guid>
-      <description>Test page  </description>
+      <guid>/ctq_to_aces_shiny/</guid>
+      <description>Two of the most common surveys used to evaluate childhood adversity are the Childhood Trauma Questionaire (CTQ) and Adverse Childhood Experience (ACE) questionnaires. For each of five maltreatment subscales, the CTQ has multiple items corresponding to a single ACE item. We use different methods to predict ACE scores from the CTQ scores and evaluate the quality of these predictions.
+While primarily for researchers that study childhood maltreatment, the interactive visualization of statistical concepts and receiver operating characteristic curves, might also be of interest to students in an introductory statistics course.</description>
     </item>
     
     <item>
-      <title>Hello R Markdown</title>
-      <link>/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      <title>Visualizing the translation between trauma questionnaires</title>
+      <link>/ctq_to_aces_visualization/</link>
+      <pubDate>Tue, 19 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2015-07-23-r-rmarkdown/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+      <guid>/ctq_to_aces_visualization/</guid>
+      <description>These four visualizations helped me make sense of the data. Not all of them made it to the final Shiny App. Not sure what I’m talking about? Check out my post here [bananas link!]
+1. Describing the Childhood Trauma Questionnaire (CTQ) subscales using heatmaps [bananas add before/after pics]
+Before going about trying to convert between the CTQ and ACE survey, I wanted to make sure that items on the CTQ “hung together” within subscales.</description>
     </item>
     
     <item>
