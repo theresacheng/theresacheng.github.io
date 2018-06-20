@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Translating between trauma questionnaires</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Theresa Cheng" />
+    <meta name="date" content="2018-06-20" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Translating between trauma questionnaires
+### Theresa Cheng
+### June 20, 2018
+
+---
+
+
+
+
+class: middle, left
+
+# My (real) problem
+
+It's hard to study childhood maltreatment. To do a better study, I'm using three samples. 
+
+To assess maltreatment, two samples took the Childhood Trauma Questionnaire (CTQ) to assess trauma. The other took the Adverse Childhood Experience (ACE) survey. 
+
+Do these scales correspond?
+
+---
+
+# Glorious Data
+
+* 462 young adults took both the CTQ and ACE
+* Dataset from Martin Teicher
+
+### Thanks, Marty! 
+
+---
+
+background-image: url("https://media.giphy.com/media/HVp1HhQyeb58Q/giphy.gif")
+background-size: cover
+
+---
+
+class: inverse
+# Comparing the questionnaires
+
+.pull-left[
+### CTQ
+* Five questions per subscale ask about frequency (1 = Never, 5 = Very Often).
+* Physical neglect examples:
+  1. I didn't have enough to eat.
+  2. I knew that there was someone to take care of me and protect me.*
+  3. I had to wear dirty clothes.  
+  4. My parents were too drunk or high to take care of the family.  
+  5. There was someone to take me to the doctor if I needed it.*  
+
+\* Reverse-scored 
+]
+
+--
+.pull-right[
+### ACE
+* Asks one compound question per subscale.
+* Physical neglect: "Did you **often** feel that you didn’t have enough to eat, had to wear dirty clothes, and had no one to protect you? -or- Your parents were too drunk or high to take care of you or take you to the doctor if you needed it?"
+]
+
+---
+
+# Prediction strategies
+
+How well can we predict ACE scores from CTQ scores?
+--
+
+### 1. Item-based
+* Predict ACE endorsement by being above threshold on one or more subscale items
+
+--
+
+### 2. Subscale-based
+* Predict ACE endorsement by being above threshold on a summed subscale score
+
+--
+
+### 3. Logistic regression
+* Predict ACE endorsement by being above probability threshold for a logistic regression model
+
+---
+
+class: middle, center
+background-color: white
+
+# Dynamic visualization
+
+### Check out the [CTQ to ACES Shiny App](https://theresacheng.shinyapps.io/ctq_to_aces_shiny/)
+
+---
+background-color: white
+
+# A word on process
+
+![](graph_3_before_after.jpg) 
+
+---
+
+# References 
+
+Teicher, M. H., &amp; Parigger, A. (2015). The “Maltreatment and Abuse Chronology of Exposure” (MACE) scale for the retrospective assessment of abuse and neglect during development. PloS One, 10(2), e0117423. https://doi.org/10.1371/journal.pone.0117423
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "atelier-lakeside-light",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+});
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

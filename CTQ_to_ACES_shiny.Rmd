@@ -20,6 +20,8 @@ While primarily for researchers that study childhood maltreatment, the interacti
 
 The data are from a sample of 462 young adults who took both scales. The dataset includes their scores on each of the CTQ and ACE items, as well as participant age, and this information was provided by Dr. Martin Teicher (dataset characteristics are available in Teicher & Parriger, 2015).
 
+Here are some of my [slides](slides/ctq_to_aces_presentation.html) from a short presentation on this app. 
+
 # Shiny app components
 
 ## Subscale Options
