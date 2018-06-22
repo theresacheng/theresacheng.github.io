@@ -17,21 +17,27 @@ These four visualizations helped me make sense of the data. Not all of them made
 
 # 1. Describing the Childhood Trauma Questionnaire (CTQ) subscales using heatmaps
 
-[bananas add before/after pics]
+![](heatmap_before_after.jpg)
 
 Before going about trying to convert between the CTQ and ACE survey, I wanted to make sure that items on the CTQ "hung together" within subscales. A heatmap organized by subscale that shows correlations between each CTQ item gives me a general sense of coherence within and between subscales. A simpler heatmap showing correlations between subscales (not items) further clarifies the strength of co-exposures to trauama in the sample. 
 
 The process of improving this graph included simplifying the item labels for legibility, clarifying labels and titles, and changing the color scale to better display the range of values. It also included completely accidentally making the simpler heatmap when trying to render the more complex one, and then going, "Hey, that seems useful, too!" 
 
-Still needs a figure caption exaplaining the subscale abbreviations, but hey -- this one didn't make the final app cut.
+#### Accidental bonus heatmap!
+
+![](heatmap_subscale_before_after.jpg)
+
+Still needs a figure caption exaplaining the subscale abbreviations, but hey -- this one didn't make the final app cut. 
 
 # 2. Table of participants with true/false positives/negatives
+
+![](table_before_after.jpg)
 
 This table shows how changes in threshold impact the number of participants sorted by predicted ACE and actual ACE scores. I re-formatted the table in a 2 by 2 format that is commonly used in biomedical statistics, where the outcome (in this case, actual ACE endorsement) is indicated by True and False columns, while the drug or exposure (in this case, predicted ACE endorsement) is reflected by True and False rows.
 
 # 3. Bar graph of sensitivity, specificity, positive predictive value, and negative predictive value. 
 
-![](graph_3_before_after.jpg)
+![](bargraph_before_after.jpg)
 
 This bar graph complements the table by showing changes in sensitivity, specificity, negative predictive value, and positive predictive value that correspond with the different number of participants in the true/false positive/negative categories.
 
@@ -39,7 +45,7 @@ Bar graphs are fairly straightforward, and this one doesn't have any bells and w
 
 # 4. Receiver operating characteristic (ROC) curves for subscale-based thresholding
 
-[bananas add before/after pics]
+![](roc_before_after.jpg)
 
 This graph demonstrates trade-offs in identifying true positives (sensitivity, on the y-axis) and false positives (1-specificity, on the x axis) as the threshold for converting the cumulative CTQ score into an ACE endorsement changes. 
 
@@ -49,4 +55,4 @@ To make this graph, I used the plotROC package and added features for aesthetics
 
 
 # Running the code
-All of the relevant code can be found on GitHub [bananas]. Specifically, the heatmaps are available in "ctq_heatmaps.Rmd", while the other relevant code for graphs 2-4 can be found in the Shiny format (app.R, helper.R) However, the graphs are not fully reproducible because I do not have permission to publically share the data. With permission from the original authors, I may be able to share the data so that y'all can run this jam solo. 
+All of the relevant code can be found on [GitHub](https://github.com/theresacheng/ctq_to_aces_shiny). Specifically, the heatmaps are available in "ctq_heatmaps.Rmd", while the other relevant code for graphs 2-4 can be found in the Shiny format (app.R, helper.R) However, the graphs are not fully reproducible because I do not have permission to publically share the data. With permission from the original authors, I may be able to share the data so that y'all can run this jam solo. 
